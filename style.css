@@ -46,12 +46,22 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.1); opacity: 0.8; }
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.1;
@@ -142,7 +152,8 @@ nav {
 }
 
 /* Buttons */
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -216,22 +227,40 @@ nav {
     border-radius: 40px;
     border: 8px solid #333;
     position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-image: url('assets/hero-bg.png'); /* Use the generated gradient as screen BG */
+    background-image: url('assets/hero-bg.png');
+    /* Use the generated gradient as screen BG */
     background-size: cover;
     background-position: center;
 }
 
-.floating-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    z-index: 2;
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.screen-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.screen-icon:hover {
+    transform: scale(1.1);
+}
+
+.screen-icon:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
 }
 
 .mockup-screen {
@@ -244,7 +273,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
 
@@ -252,13 +281,13 @@ nav {
     font-size: 8rem;
     font-weight: 800;
     color: #fff;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Apps Section */
 #apps {
     padding: 100px 0;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
 }
 
 .section-header {
@@ -279,15 +308,15 @@ nav {
 
 .app-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .app-icon img {
     width: 120px;
     height: 120px;
     border-radius: 28px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .app-info {
@@ -403,16 +432,20 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    
+    h1 {
+        font-size: 2.5rem;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 50px;
     }
 
-    .hero-text { margin: 0 auto; }
-    
+    .hero-text {
+        margin: 0 auto;
+    }
+
     .cta-group {
         display: flex;
         flex-direction: column;
@@ -420,7 +453,9 @@ footer {
         align-items: center;
     }
 
-    .btn-secondary { margin-left: 0; }
+    .btn-secondary {
+        margin-left: 0;
+    }
 
     .app-card {
         flex-direction: column;
@@ -444,29 +479,35 @@ footer {
     padding-top: 150px;
     padding-bottom: 100px;
 }
+
 .last-updated {
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 3rem;
     opacity: 0.8;
 }
+
 .policy-section {
     margin-bottom: 3rem;
 }
+
 .policy-section h2 {
     color: var(--primary-color);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
+
 .policy-section p {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1rem;
 }
+
 /* Footer Legal Links */
 .footer-legal {
     margin-top: 10px;
 }
+
 .footer-legal a {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -474,6 +515,7 @@ footer {
     transition: color 0.3s;
     opacity: 0.7;
 }
+
 .footer-legal a:hover {
     color: var(--primary-color);
     opacity: 1;
