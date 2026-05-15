@@ -1,3 +1,25 @@
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const navLinksArray = document.querySelectorAll('.nav-links a');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Close menu when clicking a link
+    navLinksArray.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+        });
+    });
+}
+
 // Header scroll effect
 const header = document.querySelector('header');
 
